@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Single Page Application with jQuery</title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+
+  <style media="screen">
+    body {
+      font-family: "Quicksand", sans-serif;
+      padding-top: 4rem;
+    }
+    h1 {
+      font-size: 4rem;
+    }
+    h2 {
+      font-size: 3rem;
+    }
+    .menu {
+      display: flex;
+      margin-top: 4rem;
+    }
+    .menu-item {
+      list-style: none;
+      margin-right: 2rem;
+    }
+    #templates {
+      display: none;
+    }
+  </style>
+
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+</head>
+<body>
+  <main class="container">
+    <h1>Single Page Application with jQuery</h1>
+    <nav>
+      <ul class="menu">
+        <li class="menu-item"><a href="#">Top</a></li>
+        <li class="menu-item"><a href="#about">About</a></li>
+        <li class="menu-item"><a href="#contact/12345">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="view-container"></div>
+    <div id="templates">
+      <div id="landing">
+        <h2>first view</h2>
+      </div>
+      <div id="about">
+        <h2>about me</h2>
+      </div>
+      <div id="contact">
+        <h2>call me or mail me!</h2>
+        <p>Param is <strong class="param"></strong></p>
+      </div>
+    </div>
+  </main>
+
+  <script src="/spa-router.js"></script>
+  <script>
+    $(function() {
+      spaRouter.init();
+    });
+  </script>
+</body>
+</html>
